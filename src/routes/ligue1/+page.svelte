@@ -27,6 +27,7 @@
                 name: name,
                 pts: $(this).parent().next().text(),
                 joues: $(this).parent().next().next().text(),
+                diff: $(this).parent().next().next().next().next().next().next().next().next().text(),
                 maxPts: 0
             };
             line.maxPts = parseInt(line.pts) + ( 3 * (nbMaxJ - parseInt(line.joues)))
@@ -47,6 +48,7 @@
             <td>#</td>
             <td>Name</td>
             <td>Pts</td>
+            <td>Diff</td>
         </tr>
     </thead>
     <tbody>
@@ -69,7 +71,7 @@
         <td>
             {club.pts}
         </td>
-        
+        <td>{club.diff}</td>
     </tr> 
     {/each}
 </tbody>

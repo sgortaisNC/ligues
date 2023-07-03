@@ -47,23 +47,18 @@
             <td>#</td>
             <td>Name</td>
             <td>Pts</td>
-            <td>Peut finir 1er</td>
-            <td>Peut faire la LDC</td>
-            <td>Peut faire l'europe</td>
-            <td>Evite la <a href="/ligue2">L2</a></td>
         </tr>
     </thead>
     <tbody>
         {#each clubs as club, index}
-        <tr class="
+        <tr class='
         {club.pts <= clubs[16].maxPts ? "releguable " : ""} 
         {club.maxPts < clubs[15].pts ? "relegue " : ""} 
-        {club.pts >= ptsEurope ? "europe " : ""} 
+        {club.pts > ptsEurope ? "europe " : ""}
         {club.maxPts >= clubs[4].pts ? "europable " : ""} 
-        {club.pts >= ptsLDC ? "ldc " : ""} 
+        {club.pts > ptsLDC ? "ldc " : ""}
         {club.maxPts >= clubs[2].pts ? "ldcable " : ""} 
-        {club.pts >= clubs[1].maxPts ? "top " : ""}
-        ">
+        '>
         
         <td>
             {index + 1 }
@@ -73,19 +68,6 @@
         </td>
         <td>
             {club.pts}
-        </td>
-        <td>
-            {club.maxPts >= clubs[0].pts ? "Oui " : "Non"} {#if club.pts >= ptsPremier} - Validé{/if}
-        </td>
-        <td>
-            {club.maxPts >= clubs[2].pts ? "Oui " : "Non"} {#if club.pts >= ptsLDC} - Validé{/if}
-        </td>
-        <td>
-            {club.maxPts >= clubs[4].pts ? "Oui " : "Non"} {#if club.pts >= ptsEurope} - Validé{/if}
-        </td>
-        <td>
-            {club.pts <= clubs[16].maxPts ? "Non" : "Oui"} 
-
         </td>
         
     </tr> 

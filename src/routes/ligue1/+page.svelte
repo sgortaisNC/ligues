@@ -89,7 +89,6 @@
     tbody tr:nth-child(odd){
         background: #eee;
     }
-    tbody tr:nth-last-child(4),
     tbody tr:nth-last-child(3),
     tbody tr:nth-last-child(2),
     tbody tr:nth-last-child(1){

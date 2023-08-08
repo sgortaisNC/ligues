@@ -42,6 +42,10 @@
     
     
 </script>
+
+<div class="textcenter">
+    <a href="/ligue2">L2</a>
+</div>
 <table cellpadding="13" cellspacing="0">
     <thead>
         <tr>
@@ -79,6 +83,9 @@
 
 
 <style>
+    .textcenter{
+        text-align: center;
+    }
     thead td{
         font-weight: bold;
     }

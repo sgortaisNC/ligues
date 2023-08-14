@@ -54,6 +54,7 @@
             <td>Pts</td>
             <td>GA</td>
             <td>J</td>
+            <td>Max</td>
         </tr>
     </thead>
     <tbody>
@@ -78,6 +79,7 @@
         </td>
         <td>{club.diff}</td>
         <td>{club.joues}</td>
+        <td>{club.maxPts}</td>
     </tr> 
     {/each}
 </tbody>

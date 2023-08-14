@@ -3,7 +3,7 @@
     import axios from 'axios';
     import { load } from 'cheerio';
     
-    const nbMaxJ = 38;
+    const nbMaxJ = 34;
     let ptsRelegation = 0;
     let ptsEurope = 0;
     let ptsLDC = 0;
@@ -35,7 +35,7 @@
         });
         ptsRelegation = parseInt(clubs[16].pts) + ( 3 * (nbMaxJ - parseInt(clubs[16].joues)));
         ptsEurope = parseInt(clubs[5].pts) + ( 3 * (nbMaxJ - parseInt(clubs[5].joues)));
-        ptsLDC = parseInt(clubs[3].pts) + ( 3 * (nbMaxJ - parseInt(clubs[3].joues)));
+        ptsLDC = parseInt(clubs[4].pts) + ( 3 * (nbMaxJ - parseInt(clubs[4].joues)));
         ptsPremier = parseInt(clubs[1].pts) + ( 3 * (nbMaxJ - parseInt(clubs[1].joues)));
     });
     
@@ -52,7 +52,8 @@
             <td>#</td>
             <td>Name</td>
             <td>Pts</td>
-            <td>Diff</td>
+            <td>GA</td>
+            <td>J</td>
         </tr>
     </thead>
     <tbody>
@@ -76,6 +77,7 @@
             {club.pts}
         </td>
         <td>{club.diff}</td>
+        <td>{club.joues}</td>
     </tr> 
     {/each}
 </tbody>

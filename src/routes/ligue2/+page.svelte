@@ -58,7 +58,7 @@
         {club.pts <= clubs[16].maxPts ? "releguable " : ""} 
         {club.maxPts < clubs[15].pts ? "relegue " : ""} 
         {club.pts > ptsL1 ? "europe " : ""}
-        {club.maxPts >= clubs[16].pts ? "europable " : ""} 
+        {club.maxPts >= clubs[1].pts ? "europable " : ""} 
         '>
         
         <td>

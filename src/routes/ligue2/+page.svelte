@@ -23,16 +23,16 @@
             const name = $(this).text().trim();
             const line = {
                 name: name,
-                pts: $(this).parent().next().text(),
-                joues: $(this).parent().next().next().text(),
-                diff: $(this).parent().next().next().next().next().next().next().next().next().text(),
+                pts: parseInt($(this).parent().next().text()),
+                joues: parseInt($(this).parent().next().next().text()),
+                diff: parseInt($(this).parent().next().next().next().next().next().next().next().next().text()),
                 maxPts: 0
             };
-            line.maxPts = parseInt(line.pts) + (3 * (nbMaxJ - parseInt(line.joues)))
+            line.maxPts = line.pts + (3 * (nbMaxJ - line.joues));
             clubs = [...clubs, line];
         });
-        ptsRelegation = parseInt(clubs[16].pts) + (3 * (nbMaxJ - parseInt(clubs[16].joues)));
-        ptsL1 = parseInt(clubs[3].pts) + (3 * (nbMaxJ - parseInt(clubs[3].joues)));
+        ptsRelegation = clubs[16].pts + (3 * (nbMaxJ - clubs[16].joues));
+        ptsL1 = clubs[3].pts + (3 * (nbMaxJ - clubs[3].joues));
     });
 
 
@@ -72,11 +72,10 @@
             <td>
                 {club.pts}
             </td>
-            <td>{club.diff}</td>
+            <td>{club.diff > 0 ? "+" : ''}{club.diff}</td>
             <td>{club.joues}</td>
             <td>{club.maxPts}</td>
-            <td>{Math.round(club.pts + ((club.pts / club.joues) * (nbMaxJ - club.joues)))}</td>
-
+            <td>{Math.round(club.pts + club.pts / club.joues * (nbMaxJ - club.joues))}</td>
         </tr>
     {/each}
     </tbody>

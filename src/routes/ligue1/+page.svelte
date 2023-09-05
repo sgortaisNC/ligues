@@ -16,23 +16,29 @@
      */
     let clubs = [];
 
-    onMount(async function () {
-        const response = await axios.get(url)
-        const html = response.data;
-        const $ = load(html);
 
-        $('.GeneralStats-item--club .desktop-item').each(function () {
-            const name = $(this).text().trim();
+    onMount(async function () {
+
+        let api_key = '842afe9284cf43acb8efb6faa9505c0f'; // Remplacez par votre clé API
+
+        const response = await axios.get('https://api.football-data.org/v4/competitions/FL1/standings', {
+            headers: {'X-Auth-Token': api_key}
+        });
+
+        const datas = response.data.standings[0].table;
+
+        for (const data of datas) {
             const line = {
-                name: name,
-                pts: parseInt($(this).parent().next().text()),
-                joues: parseInt($(this).parent().next().next().text()),
-                diff: parseInt($(this).parent().next().next().next().next().next().next().next().next().text()),
+                name: data.team.shortName,
+                pts: data.points,
+                joues: data.playedGames,
+                diff: data.goalDifference,
                 maxPts: 0
             };
             line.maxPts = line.pts + (3 * (nbMaxJ - line.joues))
             clubs = [...clubs, line];
-        });
+        }
+
         ptsRelegation = clubs[16].pts + (3 * (nbMaxJ - clubs[16].joues));
         ptsEurope = clubs[5].pts + (3 * (nbMaxJ - clubs[5].joues));
         ptsLDC = clubs[4].pts + (3 * (nbMaxJ - clubs[4].joues));

@@ -1,5 +1,6 @@
 <script>
     import {onMount} from 'svelte';
+    import * as data from "./l1.json";
     
     const nbMaxJ = 34;
     let ptsRelegation = 0;
@@ -62,14 +63,11 @@
         "CLERMONT FOOT 63": {name: 'CLERMONT FOOT 63', pts: 0, joues: 0, diff: 0, maxPts: 0}
     };
     
-    onMount(async function () {
-        
-        const res = await fetch('/l1.json');
-        const data = await res.json();
+    onMount(function () {
         
         const j1 = data.matches[1 - 1];         
         
-        await data.matches.forEach((journee) => {
+        data.matches.forEach((journee) => {
             journee.forEach(match => {
                 doMatch(match);
             });
@@ -79,7 +77,7 @@
 
         classement.sort((a, b) => b.pts - a.pts);
 
-        await classement.forEach(team => {
+        classement.forEach(team => {
             team.maxPts = team.pts + (3*(nbMaxJ - team.joues));
         })
 

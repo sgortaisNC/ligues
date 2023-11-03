@@ -37,7 +37,7 @@
                 "home": "PARIS SAINT-GERMAIN",
                 "homeScore": 0, 
                 "ext": "FC LORIENT",
-                "extScore": 1
+                "extScore": 0
             },
             {
                 "home": "STADE BRESTOIS 29",
@@ -526,66 +526,66 @@
         ],   
         [
             {
-                "home": "OGC NICE",
-                "homeScore": null, 
-                "ext": "LOSC LILLE",
-                "extScore": null
+                "home": "CLERMONT FOOT 63",
+                "homeScore": 0, 
+                "ext": "OGC NICE",
+                "extScore": 1
+            },
+            {
+                "home": "STADE DE REIMS",
+                "homeScore": 1, 
+                "ext": "FC LORIENT",
+                "extScore": 0
+            },
+            {
+                "home": "STADE BRESTOIS 29",
+                "homeScore": 2, 
+                "ext": "PARIS SAINT-GERMAIN",
+                "extScore": 3
+            },
+            {
+                "home": "MONTPELLIER HÉRAULT SC",
+                "homeScore": 3, 
+                "ext": "TOULOUSE FC",
+                "extScore": 0
+            },
+            {
+                "home": "FC METZ",
+                "homeScore": 0, 
+                "ext": "HAVRE ATHLETIC CLUB",
+                "extScore": 0
+            },
+            {
+                "home": "LOSC LILLE",
+                "homeScore": 2, 
+                "ext": "AS MONACO",
+                "extScore": 0
             },
             {
                 "home": "OLYMPIQUE DE MARSEILLE",
                 "homeScore": null, 
-                "ext": "STADE DE REIMS",
-                "extScore": null
-            },
-            {
-                "home": "PARIS SAINT-GERMAIN",
-                "homeScore": null, 
-                "ext": "FC LORIENT",
-                "extScore": null
-            },
-            {
-                "home": "STADE BRESTOIS 29",
-                "homeScore": null, 
-                "ext": "RC LENS",
-                "extScore": null
-            },
-            {
-                "home": "CLERMONT FOOT 63",
-                "homeScore": null, 
-                "ext": "AS MONACO",
-                "extScore": null
-            },
-            {
-                "home": "MONTPELLIER HÉRAULT SC",
-                "homeScore": null, 
-                "ext": "HAVRE ATHLETIC CLUB",
-                "extScore": null
-            },
-            {
-                "home": "FC NANTES",
-                "homeScore": null, 
-                "ext": "TOULOUSE FC",
+                "ext": "OLYMPIQUE LYONNAIS",
                 "extScore": null
             },
             {
                 "home": "STADE RENNAIS FC",
-                "homeScore": null, 
-                "ext": "FC METZ",
-                "extScore": null
+                "homeScore": 1, 
+                "ext": "RC STRASBOURG ALSACE",
+                "extScore": 1
             },
             {
-                "home": "RC STRASBOURG ALSACE",
-                "homeScore": null, 
-                "ext": "OLYMPIQUE LYONNAIS",
-                "extScore": null
+                "home": "RC LENS",
+                "homeScore": 4, 
+                "ext": "FC NANTES",
+                "extScore": 0
             }
         ],   
         [
             {
-                "home": "OGC NICE",
-                "homeScore": null, 
-                "ext": "LOSC LILLE",
-                "extScore": null
+                "home": "PARIS SAINT-GERMAIN",
+                "homeScore": 3, 
+                "ext": "MONTPELLIER HÉRAULT SC",
+                "extScore": 0
             },
             {
                 "home": "OLYMPIQUE DE MARSEILLE",

@@ -56,7 +56,7 @@
         "HAVRE ATHLETIC CLUB": {name: 'HAVRE ATHLETIC CLUB', pts: 0, joues: 0, diff: 0, maxPts: 0},
         "FC LORIENT": {name: 'FC LORIENT', pts: 0, joues: 0, diff: 0, maxPts: 0},
         "RC STRASBOURG ALSACE": {name: 'RC STRASBOURG ALSACE', pts: 0, joues: 0, diff: 0, maxPts: 0},
-        "MONTPELLIER HÉRAULT SC": {name: 'MONTPELLIER HÉRAULT SC', pts: 0, joues: 0, diff: 0, maxPts: 0},
+        "MONTPELLIER HÉRAULT SC": {name: 'MONTPELLIER HÉRAULT SC', pts: -1, joues: 0, diff: 0, maxPts: 0},
         "RC LENS": {name: 'RC LENS', pts: 0, joues: 0, diff: 0, maxPts: 0},
         "FC METZ": {name: 'FC METZ', pts: 0, joues: 0, diff: 0, maxPts: 0},
         "OLYMPIQUE LYONNAIS": {name: 'OLYMPIQUE LYONNAIS', pts: 0, joues: 0, diff: 0, maxPts: 0},
@@ -75,7 +75,7 @@
 
         classement = Object.values(clubs); 
 
-        classement.sort((a, b) => b.pts - a.pts);
+        classement.sort((a, b) => {return b.pts - a.pts || b.diff - a.diff });
 
         classement.forEach(team => {
             team.maxPts = team.pts + (3*(nbMaxJ - team.joues));

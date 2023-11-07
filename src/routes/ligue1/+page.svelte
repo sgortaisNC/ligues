@@ -41,29 +41,36 @@
             clubs[match.home].diff += diff;
         };
 
+        console.log(clubs[match.ext].results.length)
+        if(clubs[match.ext].results.length > 5){
+            clubs[match.ext].results.shift();
+        }
+        if(clubs[match.home].results.length > 5){
+            clubs[match.home].results.shift();
+        }
     }
     
     let classement = [];
     
     let clubs = {
-        "OGC NICE": {name: 'OGC NICE', pts: 0, joues: 0, diff: 0, maxPts: 0,results: []},
-        "PARIS SAINT-GERMAIN": {name: 'PARIS SAINT-GERMAIN', pts: 0, joues: 0, diff: 0, maxPts: 0,results: []},
-        "AS MONACO": {name: 'AS MONACO', pts: 0, joues: 0, diff: 0, maxPts: 0,results: []},
-        "LOSC LILLE": {name: 'LOSC LILLE', pts: 0, joues: 0, diff: 0, maxPts: 0,results: []},
-        "STADE BRESTOIS 29": {name: 'STADE BRESTOIS 29', pts: 0, joues: 0, diff: 0, maxPts: 0,results: []},
-        "FC NANTES": {name: 'FC NANTES', pts: 0, joues: 0, diff: 0, maxPts: 0,results: []},
-        "STADE DE REIMS": {name: 'STADE DE REIMS', pts: 0, joues: 0, diff: 0, maxPts: 0,results: []},
-        "OLYMPIQUE DE MARSEILLE": {name: 'OLYMPIQUE DE MARSEILLE', pts: 0, joues: 0, diff: 0, maxPts: 0,results: []},
-        "STADE RENNAIS FC": {name: 'STADE RENNAIS FC', pts: 0, joues: 0, diff: 0, maxPts: 0,results: []},
-        "TOULOUSE FC": {name: 'TOULOUSE FC', pts: 0, joues: 0, diff: 0, maxPts: 0,results: []},
-        "HAVRE ATHLETIC CLUB": {name: 'HAVRE ATHLETIC CLUB', pts: 0, joues: 0, diff: 0, maxPts: 0,results: []},
-        "FC LORIENT": {name: 'FC LORIENT', pts: 0, joues: 0, diff: 0, maxPts: 0,results: []},
-        "RC STRASBOURG ALSACE": {name: 'RC STRASBOURG ALSACE', pts: 0, joues: 0, diff: 0, maxPts: 0,results: []},
-        "MONTPELLIER HÉRAULT SC": {name: 'MONTPELLIER HÉRAULT SC', pts: -1, joues: 0, diff: 0, maxPts: 0,results: []},
-        "RC LENS": {name: 'RC LENS', pts: 0, joues: 0, diff: 0, maxPts: 0,results: []},
-        "FC METZ": {name: 'FC METZ', pts: 0, joues: 0, diff: 0, maxPts: 0,results: []},
-        "OLYMPIQUE LYONNAIS": {name: 'OLYMPIQUE LYONNAIS', pts: 0, joues: 0, diff: 0, maxPts: 0,results: []},
-        "CLERMONT FOOT 63": {name: 'CLERMONT FOOT 63', pts: 0, joues: 0, diff: 0, maxPts: 0,results: []}
+        "OGC NICE": {name: 'OGC NICE', pts: 0, joues: 0, diff: 0, maxPts: 0,results: [], sgs: {n5: 0, v5: 0,pts5: 0, diff5: 0}},
+        "PARIS SAINT-GERMAIN": {name: 'PARIS SAINT-GERMAIN', pts: 0, joues: 0, diff: 0, maxPts: 0,results: [], sgs: {n5: 0, v5: 0,pts5: 0, diff5: 0}},
+        "AS MONACO": {name: 'AS MONACO', pts: 0, joues: 0, diff: 0, maxPts: 0,results: [], sgs: {n5: 0, v5: 0,pts5: 0, diff5: 0}},
+        "LOSC LILLE": {name: 'LOSC LILLE', pts: 0, joues: 0, diff: 0, maxPts: 0,results: [], sgs: {n5: 0, v5: 0,pts5: 0, diff5: 0}},
+        "STADE BRESTOIS 29": {name: 'STADE BRESTOIS 29', pts: 0, joues: 0, diff: 0, maxPts: 0,results: [], sgs: {n5: 0, v5: 0,pts5: 0, diff5: 0}},
+        "FC NANTES": {name: 'FC NANTES', pts: 0, joues: 0, diff: 0, maxPts: 0,results: [], sgs: {n5: 0, v5: 0,pts5: 0, diff5: 0}},
+        "STADE DE REIMS": {name: 'STADE DE REIMS', pts: 0, joues: 0, diff: 0, maxPts: 0,results: [], sgs: {n5: 0, v5: 0,pts5: 0, diff5: 0}},
+        "OLYMPIQUE DE MARSEILLE": {name: 'OLYMPIQUE DE MARSEILLE', pts: 0, joues: 0, diff: 0, maxPts: 0,results: [], sgs: {n5: 0, v5: 0,pts5: 0, diff5: 0}},
+        "STADE RENNAIS FC": {name: 'STADE RENNAIS FC', pts: 0, joues: 0, diff: 0, maxPts: 0,results: [], sgs: {n5: 0, v5: 0,pts5: 0, diff5: 0}},
+        "TOULOUSE FC": {name: 'TOULOUSE FC', pts: 0, joues: 0, diff: 0, maxPts: 0,results: [], sgs: {n5: 0, v5: 0,pts5: 0, diff5: 0}},
+        "HAVRE ATHLETIC CLUB": {name: 'HAVRE ATHLETIC CLUB', pts: 0, joues: 0, diff: 0, maxPts: 0,results: [], sgs: {n5: 0, v5: 0,pts5: 0, diff5: 0}},
+        "FC LORIENT": {name: 'FC LORIENT', pts: 0, joues: 0, diff: 0, maxPts: 0,results: [], sgs: {n5: 0, v5: 0,pts5: 0, diff5: 0}},
+        "RC STRASBOURG ALSACE": {name: 'RC STRASBOURG ALSACE', pts: 0, joues: 0, diff: 0, maxPts: 0,results: [], sgs: {n5: 0, v5: 0,pts5: 0, diff5: 0}},
+        "MONTPELLIER HÉRAULT SC": {name: 'MONTPELLIER HÉRAULT SC', pts: -1, joues: 0, diff: 0, maxPts: 0,results: [], sgs: {n5: 0, v5: 0,pts5: 0, diff5: 0}},
+        "RC LENS": {name: 'RC LENS', pts: 0, joues: 0, diff: 0, maxPts: 0,results: [], sgs: {n5: 0, v5: 0,pts5: 0, diff5: 0}},
+        "FC METZ": {name: 'FC METZ', pts: 0, joues: 0, diff: 0, maxPts: 0,results: [], sgs: {n5: 0, v5: 0,pts5: 0, diff5: 0}},
+        "OLYMPIQUE LYONNAIS": {name: 'OLYMPIQUE LYONNAIS', pts: 0, joues: 0, diff: 0, maxPts: 0,results: [], sgs: {n5: 0, v5: 0,pts5: 0, diff5: 0}},
+        "CLERMONT FOOT 63": {name: 'CLERMONT FOOT 63', pts: 0, joues: 0, diff: 0, maxPts: 0,results: [], sgs: {n5: 0, v5: 0,pts5: 0, diff5: 0}}
     };
     
     onMount(function () {
@@ -82,6 +89,8 @@
 
         classement.forEach(team => {
             team.maxPts = team.pts + (3*(nbMaxJ - team.joues));
+            team.sgs.v5 = team.results.filter(x => x === "V").length;
+            team.sgs.n5 = team.results.filter(x => x === "N").length;
         })
 
         ptsRelegation = classement[16].pts + (3 * (nbMaxJ - classement[16].joues));
@@ -133,13 +142,11 @@
         <td>{club.maxPts}</td>
         <td>{Math.round(club.pts + club.pts / club.joues * (nbMaxJ - club.joues))}</td>
         <td>
-            {#each club.results as res,index }
-                {#if  index > club.results.length - 6}
+            {#each club.results as res }
                     <div class="dot {res}"></div>
-                {/if}
             {/each}
         </td>
-        <td>0</td>
+        <td>{ ((club.pts / club.joues) * (1 + (club.sgs.v5 * 1.2)) * (1 + (club.sgs.n5 * 1.05))).toFixed(2) }</td>
     </tr>
     {/each}
 </tbody>

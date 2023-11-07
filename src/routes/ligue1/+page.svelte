@@ -146,7 +146,12 @@
                     <div class="dot {res}"></div>
             {/each}
         </td>
-        <td>{ ((club.pts / club.joues) * (1 + (club.sgs.v5 * 1.2)) * (1 + (club.sgs.n5 * 1.05))).toFixed(2) }</td>
+        <td>{ 
+            (
+                (club.pts / club.joues) 
+                * (1 + (club.sgs.v5 * 1.15))
+                * (1 + (club.sgs.n5 * 1.05))
+            ).toFixed(2) }</td>
     </tr>
     {/each}
 </tbody>

@@ -1,6 +1,7 @@
 <script>
     import {onMount} from 'svelte';
     import * as data from "./l1.json";
+
     
     const nbMaxJ = 34;
     let ptsRelegation = 0;

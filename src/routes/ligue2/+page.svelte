@@ -2,7 +2,7 @@
     import {onMount} from 'svelte';
     import axios from 'axios';
     import {load} from 'cheerio';
-
+    import Menu from '../../components/menu.svelte';
     let ptsRelegation = 0;
     let ptsL1 = 0;
     let ptsPlayoff = 0;
@@ -39,10 +39,7 @@
 
 
 </script>
-
-<div class="textcenter">
-    <a href="/ligue1">L1</a>
-</div>
+<Menu/>
 <table cellpadding="13" cellspacing="0">
     <thead>
     <tr>

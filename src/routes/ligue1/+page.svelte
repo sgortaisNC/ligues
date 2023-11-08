@@ -1,7 +1,8 @@
 <script>
     import {onMount} from 'svelte';
+    import Menu from '../../components/menu.svelte';
     import * as data from "./l1.json";
-
+    
     
     const nbMaxJ = 34;
     let ptsRelegation = 0;
@@ -20,7 +21,7 @@
         }
         clubs[match.home].joues += 1;
         clubs[match.ext].joues += 1;
-
+        
         if (match.extScore > match.homeScore){
             clubs[match.ext].pts += 3;
             clubs[match.ext].results.push('V');
@@ -41,7 +42,7 @@
             clubs[match.ext].diff -= diff;
             clubs[match.home].diff += diff;
         };
-
+        
         console.log(clubs[match.ext].results.length)
         if(clubs[match.ext].results.length > 5){
             clubs[match.ext].results.shift();
@@ -73,44 +74,35 @@
         "OLYMPIQUE LYONNAIS": {name: 'OLYMPIQUE LYONNAIS', pts: 0, joues: 0, diff: 0, maxPts: 0,results: []},
         "CLERMONT FOOT 63": {name: 'CLERMONT FOOT 63', pts: 0, joues: 0, diff: 0, maxPts: 0,results: []}
     };
-    
-    onMount(function () {
         
-        const j1 = data.matches[1 - 1];         
-        
-        data.matches.forEach((journee) => {
-            journee.forEach(match => {
-                doMatch(match);
-            });
+    data.matches.forEach((journee) => {
+        journee.forEach(match => {
+            doMatch(match);
         });
-
-        classement = Object.values(clubs); 
-
-        classement.sort((a, b) => {return b.pts - a.pts || b.diff - a.diff });
-
-        classement.forEach(team => {
-            team.maxPts = team.pts + (3*(nbMaxJ - team.joues));
-            team.sgs = {
-                v5: team.results.filter(x => x === "V").length,
-                n5: team.results.filter(x => x === "N").length,
-            }
-        })
-        console.log(classement)
-        ptsRelegation = classement[16].pts + (3 * (nbMaxJ - classement[16].joues));
-        ptsEurope = classement[5].pts + (3 * (nbMaxJ - classement[5].joues));        
-        ptsLDC = classement[4].pts + (3 * (nbMaxJ - classement[4].joues));
-        ptsPremier = classement[1].pts + (3 * (nbMaxJ - classement[1].joues));
     });
+    
+    classement = Object.values(clubs); 
+    
+    classement.sort((a, b) => {return b.pts - a.pts || b.diff - a.diff });
+    
+    classement.forEach(team => {
+        team.maxPts = team.pts + (3*(nbMaxJ - team.joues));
+        team.sgs = {
+            v5: team.results.filter(x => x === "V").length,
+            n5: team.results.filter(x => x === "N").length,
+        }
+    })
+    ptsRelegation = classement[16].pts + (3 * (nbMaxJ - classement[16].joues));
+    ptsEurope = classement[5].pts + (3 * (nbMaxJ - classement[5].joues));        
+    ptsLDC = classement[4].pts + (3 * (nbMaxJ - classement[4].joues));
+    ptsPremier = classement[1].pts + (3 * (nbMaxJ - classement[1].joues));
 </script>
-
-<div class="textcenter">
-    <a href="/ligue2">L2</a>
-</div>
+<Menu />
 <table cellpadding="13" cellspacing="0">
     <thead>
         <tr>
             <td>#</td>
-            <td>Name</td>
+            <td>Nom</td>
             <td>Pts</td>
             <td>GA</td>
             <td>J</td>
@@ -146,18 +138,18 @@
         <td>{Math.round(club.pts + club.pts / club.joues * (nbMaxJ - club.joues))}</td>
         <td>
             {#each club.results as res }
-                    <div class="dot {res}"></div>
+            <div class="dot {res}"></div>
             {/each}
         </td>
         <td>{ 
             (
-                (((club.sgs.v5*3+ club.sgs.n5) / 5 ) / (club.pts / club.joues)) 
-                * (1 + (club.sgs.v5 * 1.15))
-                * (1 + (club.sgs.n5 * 1.05))
+            (((club.sgs.v5*3+ club.sgs.n5) / 5 ) / (club.pts / club.joues)) 
+            * (1 + (club.sgs.v5 * 1.15))
+            * (1 + (club.sgs.n5 * 1.05))
             ).toFixed(2) }</td>
-    </tr>
-    {/each}
-</tbody>
+        </tr>
+        {/each}
+    </tbody>
 </table>
 
 
@@ -212,7 +204,7 @@
     table tbody tr.ldc td:first-child {
         background-color: rgba(0, 0, 210, 0.8) !important;
     }
-
+    
     .dot{
         width: 10px;
         height: 10px;
@@ -229,5 +221,5 @@
     .dot.N{
         background-color: grey;
     }
-       
+    
 </style>

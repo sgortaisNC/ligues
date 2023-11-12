@@ -38,13 +38,30 @@
     }
     
 </script>
+<div class="grid">
 <h1>Liste</h1>
 {#each restant as match}
-    <p>{match.journee}.{match.matchIndex} {match.match.home} 
+    <p>{match.journee}.{match.matchIndex} <br> {match.match.home} 
         <input type="number" data-j={match.journee} data-i={match.matchIndex} value={match.match.homeScore} on:change={sendHome}>
         -
         <input type="number" data-j={match.journee} data-i={match.matchIndex} value={match.match.extScore} on:change={sendAway}>
         {match.match.ext}
     </p>
 {/each}
-<style></style>
+
+</div>
+
+<style>
+    .grid{
+        display: grid;
+        place-items: center;
+    }
+    p{
+        width: 100vw;
+        text-align: center;
+    }
+    input{
+        width: 75px;
+        height: 50px;
+    }
+</style>

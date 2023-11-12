@@ -153,11 +153,7 @@
 </table>
 
 
-<style>
-    .textcenter {
-        text-align: center;
-    }
-    
+<style>   
     thead td {
         font-weight: bold;
     }

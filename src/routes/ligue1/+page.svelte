@@ -1,5 +1,4 @@
 <script>
-    import {onMount} from 'svelte';
     import Menu from '../../components/menu.svelte';
     import * as data from "./l1.json";
     
@@ -115,12 +114,12 @@
     <tbody>
         {#each classement as club, index}
         <tr class='
-        {club.pts <= classement[15].maxPts ? "releguable " : ""} 
-        {club.maxPts < classement[15].pts ? "relegue " : ""} 
-        {club.pts > ptsEurope ? "europe " : ""}
-        {club.maxPts >= classement[5].pts ? "europable " : ""} 
-        {club.pts > ptsLDC ? "ldc " : ""}
         {club.maxPts >= classement[2].pts ? "ldcable " : ""} 
+        {club.maxPts >= classement[5].pts ? "europable " : ""} 
+        {club.pts < 40 ? "releguable " : ""} 
+        {club.pts > ptsEurope ? "europe " : ""}
+        {club.pts > ptsLDC ? "ldc " : ""}
+        {club.maxPts < classement[15].pts ? "relegue " : ""} 
         '>
         
         <td>
@@ -144,8 +143,7 @@
         <td>{ 
             (
             (((club.sgs.v5*3+ club.sgs.n5) / 5 ) / (club.pts / club.joues)) 
-            * (1 + (club.sgs.v5 * 1.15))
-            * (1 + (club.sgs.n5 * 1.05))
+            * (1 + (club.sgs.v5 * 1.15) + (club.sgs.n5 * 1.05))
             ).toFixed(2) }</td>
         </tr>
         {/each}
@@ -172,10 +170,7 @@
     tbody tr:nth-last-child(1) {
         background-color: rgb(255, 187, 187);
     }
-    
-    table tbody tr.releguable td:first-child {
-        background-color: rgba(255, 0, 0, 0.2);
-    }
+
     
     table tbody tr.relegue td:first-child {
         background-color: red;
@@ -199,6 +194,10 @@
     
     table tbody tr.ldc td:first-child {
         background-color: rgba(0, 0, 210, 0.8) !important;
+    }
+        
+    table tbody tr.releguable td:first-child {
+        background-color: rgba(255, 0, 0, 0.2);
     }
     
     .dot{

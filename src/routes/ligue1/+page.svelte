@@ -8,13 +8,13 @@
     let ptsEurope = 0;
     let ptsLDC = 0;
     let ptsPremier = 0;  
-    let splitter = 33;
+    let splitter = nbMaxJ;
     let classement = [];
-    let allMatches = data.matches.slice(0, splitter);
+    let allMatches = data.matches.slice(0, splitter - 1);
     
     $: if (splitter >= 0){
         console.log('aze')
-        allMatches = data.matches.slice(0, splitter + 1);
+        allMatches = data.matches.slice(0, splitter);
     
 
         function doMatch(match){
@@ -104,7 +104,7 @@
     }
 </script>
 
-<input type=range min=0 max={nbMaxJ - 1} bind:value={splitter} /> {splitter + 1}
+<input type='number' min=1 max={nbMaxJ} bind:value={splitter} /> {splitter}
 <table cellpadding="13" cellspacing="0">
     <thead>
         <tr>

@@ -56,11 +56,12 @@
     <tbody>
     {#each clubs as club, index}
         <tr class='
-        {club.pts <= clubs[16].maxPts ? "releguable " : ""} 
         {club.maxPts < clubs[15].pts ? "relegue " : ""} 
         {club.pts >= ptsL1 ? "ldc " : ""}
         {club.maxPts >= clubs[1].pts ? "ldcable " : ""} 
         {club.pts >= ptsPlayoff ? "europe " : ""}
+        {club.pts <= clubs.length*2 ? "releguable " : ""} 
+
         {club.maxPts >= clubs[4].pts ? "europable " : ""} 
         '>
 
@@ -108,9 +109,7 @@
         background-color: rgb(255, 187, 187);
     }
 
-    table tbody tr.releguable td:first-child {
-        background-color: rgba(255, 0, 0, 0.2);
-    }
+   
 
     table tbody tr.relegue td:first-child {
         background-color: red;
@@ -134,5 +133,9 @@
 
     table tbody tr.ldc td:first-child {
         background-color: rgba(0, 0, 210, 0.8) !important;
+    }
+
+    table tbody tr.releguable td:first-child {
+        background-color: rgba(255, 0, 0, 0.2);
     }
 </style>

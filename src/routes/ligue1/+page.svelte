@@ -124,7 +124,7 @@
         <tr class='
         {club.maxPts >= classement[2].pts ? "ldcable " : ""} 
         {club.maxPts >= classement[5].pts ? "europable " : ""} 
-        {club.pts < 40 ? "releguable " : ""} 
+        {club.pts < classement.length*2 ? "releguable " : ""} 
         {club.pts > ptsEurope ? "europe " : ""}
         {club.pts > ptsLDC ? "ldc " : ""}
         {club.maxPts < classement[15].pts ? "relegue " : ""} 

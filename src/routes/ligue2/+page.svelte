@@ -49,6 +49,7 @@
         <td>GA</td>
         <td>J</td>
         <td>Max</td>
+        <td>Place Max</td>
         <td>Est.</td>
 
     </tr>
@@ -77,6 +78,9 @@
             <td>{club.diff > 0 ? "+" : ''}{club.diff}</td>
             <td>{club.joues}</td>
             <td>{club.maxPts}</td>
+            <td>
+                {clubs.findIndex((element) => element.pts < club.maxPts) + 1 }
+            </td>
             <td>{Math.round(club.pts + club.pts / club.joues * (nbMaxJ - club.joues))}</td>
         </tr>
     {/each}

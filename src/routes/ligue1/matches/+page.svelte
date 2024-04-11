@@ -2,7 +2,7 @@
     import matches from "../l1.json";
     const journees = matches.matches; 
     let restant = [];
-    let currentJournee= 27;
+    let currentJournee= 29;
     journees.forEach((journee,index) => {
         if (index === currentJournee - 1 ){
             journee.forEach((match,mIndex) => {

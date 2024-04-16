@@ -19,7 +19,7 @@
         const response = await axios.get(url)
         const html = response.data;
         const $ = load(html);
-        nbMaxJ = $('.GeneralStats-item--club .desktop-item').length * 2;
+        nbMaxJ = ($('.GeneralStats-item--club .desktop-item').length - 1) * 2;
         $('.GeneralStats-item--club .desktop-item').each(function () {
             const name = $(this).text().trim();
             const line = {
@@ -50,8 +50,6 @@
         <td>J</td>
         <td>Max</td>
         <td>Place Max</td>
-        <td>Est.</td>
-
     </tr>
     </thead>
     <tbody>
@@ -81,7 +79,6 @@
             <td>
                 {clubs.findIndex((element) => element.pts < club.maxPts) + 1 }
             </td>
-            <td>{Math.round(club.pts + club.pts / club.joues * (nbMaxJ - club.joues))}</td>
         </tr>
     {/each}
     </tbody>

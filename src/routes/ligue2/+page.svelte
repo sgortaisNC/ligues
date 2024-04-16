@@ -3,6 +3,7 @@
     import axios from 'axios';
     import {load} from 'cheerio';
     import Menu from '../../components/menu.svelte';
+
     let ptsRelegation = 0;
     let ptsL1 = 0;
     let ptsPlayoff = 0;
@@ -55,12 +56,11 @@
     <tbody>
     {#each clubs as club, index}
         <tr class='
-        {club.maxPts < clubs[15].pts ? "relegue " : ""} 
         {club.pts >= ptsL1 ? "ldc " : ""}
         {club.maxPts >= clubs[1].pts ? "ldcable " : ""} 
         {club.pts >= ptsPlayoff ? "europe " : ""}
-        {club.pts <= clubs.length*2 ? "releguable " : ""} 
-
+        {club.pts <= clubs.length*2 ? "releguable " : ""}
+        {club.maxPts < clubs[15].pts ? "relegue " : ""}
         {club.maxPts >= clubs[4].pts ? "europable " : ""} 
         '>
 
@@ -77,7 +77,7 @@
             <td>{club.joues}</td>
             <td>{club.maxPts}</td>
             <td>
-                {clubs.findIndex((element) => element.pts < club.maxPts) + 1 }
+                {clubs.findIndex((element) => element.pts <= club.maxPts) + 1 }
             </td>
         </tr>
     {/each}
@@ -86,10 +86,6 @@
 
 
 <style>
-    .textcenter {
-        text-align: center;
-    }
-
     thead td {
         font-weight: bold;
     }
@@ -110,11 +106,8 @@
         background-color: rgb(255, 187, 187);
     }
 
-   
 
-    table tbody tr.relegue td:first-child {
-        background-color: red;
-    }
+
 
     table tbody tr.europable td:first-child {
         background-color: rgba(25, 88, 0, 0.4);
@@ -138,5 +131,8 @@
 
     table tbody tr.releguable td:first-child {
         background-color: rgba(255, 0, 0, 0.2);
+    }
+    table tbody tr.relegue td:first-child {
+        background-color: red;
     }
 </style>

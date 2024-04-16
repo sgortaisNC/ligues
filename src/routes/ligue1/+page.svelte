@@ -118,7 +118,6 @@
 		<td>J</td>
 		<td>Max</td>
 		<td>Place Max</td>
-		<td>Est.</td>
 		<td>Forme</td>
 		<td>SGS</td>
 	</tr>
@@ -149,7 +148,6 @@
 			<td>
 				{classement.findIndex((element) => element.pts < club.maxPts) + 1 }
 			</td>
-			<td>{Math.round(club.pts + club.pts / club.joues * (nbMaxJ - club.joues))}</td>
 			<td>
 				{#each club.results as res }
 					<div class="dot {res}"></div>

@@ -101,7 +101,7 @@
 			};
 		});
 		ptsRelegation = classement[16].pts + (3 * (nbMaxJ - classement[16].joues));
-		ptsEurope = classement[5].pts + (3 * (nbMaxJ - classement[5].joues));
+		ptsEurope = classement[6].pts + (3 * (nbMaxJ - classement[5].joues));
 		ptsLDC = classement[4].pts + (3 * (nbMaxJ - classement[4].joues));
 		ptsPremier = classement[1].pts + (3 * (nbMaxJ - classement[1].joues));
 	}
@@ -130,6 +130,7 @@
         {club.pts < classement.length*2 ? "releguable " : ""} 
         {club.pts > ptsEurope ? "europe " : ""}
         {club.pts > ptsLDC ? "ldc " : ""}
+		{club.pts > ptsPremier ? "top" : ""}
         {club.maxPts < classement[15].pts ? "relegue " : ""} 
         '>
 
@@ -186,32 +187,36 @@
     }
 
 
-    table tbody tr.relegue td:first-child {
-        background-color: red;
-    }
+
 
     table tbody tr.europable td:first-child {
         background-color: rgba(25, 88, 0, 0.4);
     }
 
-    table tbody tr.europe td:first-child {
-        background-color: rgba(25, 88, 0, 0.8) !important;
-    }
 
-    table tbody tr.top td:first-child {
-        background-color: rgba(214, 200, 3, 0.8);
-    }
+
+
 
     table tbody tr.ldcable td:first-child {
         background-color: rgba(0, 0, 210, 0.4);
     }
 
+	table tbody tr.europe td:first-child {
+        background-color: rgba(25, 88, 0, 0.8);
+    }
     table tbody tr.ldc td:first-child {
-        background-color: rgba(0, 0, 210, 0.8) !important;
+        background-color: rgba(0, 0, 210, 0.8);
     }
 
     table tbody tr.releguable td:first-child {
         background-color: rgba(255, 0, 0, 0.2);
+    }
+	table tbody tr.relegue td:first-child {
+        background-color: red;
+    }
+
+	table tbody tr.top td:first-child {
+        background-color: rgba(214, 200, 3, 0.8);
     }
 
     .dot {

@@ -1603,9 +1603,9 @@
       },
       {
         "home": "FC LORIENT",
-        "homeScore": null,
+        "homeScore": 1,
         "ext": "PARIS SAINT-GERMAIN",
-        "extScore": null
+        "extScore": 4
       },
       {
         "home": "OLYMPIQUE LYONNAIS",
@@ -1615,9 +1615,9 @@
       },
       {
         "home": "OLYMPIQUE DE MARSEILLE",
-        "homeScore": null,
+        "homeScore": 2,
         "ext": "OGC NICE",
-        "extScore": null
+        "extScore": 2
       },
       {
         "home": "FC METZ",
@@ -1627,9 +1627,9 @@
       },
       {
         "home": "AS MONACO",
-        "homeScore": null,
+        "homeScore": 1,
         "ext": "LOSC LILLE",
-        "extScore": null
+        "extScore": 0
       },
       {
         "home": "STADE RENNAIS FC",
@@ -1703,57 +1703,57 @@
     [
       {
         "home": "CLERMONT FOOT 63",
-        "homeScore": null,
+        "homeScore": 4,
         "ext": "STADE DE REIMS",
-        "extScore": null
+        "extScore": 1
       },
       {
         "home": "FC LORIENT",
-        "homeScore": null,
+        "homeScore": 1,
         "ext": "TOULOUSE FC",
-        "extScore": null
+        "extScore": 2
       },
       {
         "home": "OLYMPIQUE LYONNAIS",
-        "homeScore": null,
+        "homeScore": 3,
         "ext": "AS MONACO",
-        "extScore": null
+        "extScore": 2
       },
       {
         "home": "OLYMPIQUE DE MARSEILLE",
-        "homeScore": null,
+        "homeScore": 2,
         "ext": "RC LENS",
-        "extScore": null
+        "extScore": 1
       },
       {
         "home": "FC METZ",
-        "homeScore": null,
+        "homeScore": 1,
         "ext": "LOSC LILLE",
-        "extScore": null
+        "extScore": 2
       },
       {
         "home": "MONTPELLIER HÉRAULT SC",
-        "homeScore": null,
+        "homeScore": 1,
         "ext": "FC NANTES",
-        "extScore": null
+        "extScore": 1
       },
       {
         "home": "PARIS SAINT-GERMAIN",
-        "homeScore": null,
+        "homeScore": 3,
         "ext": "HAVRE ATHLETIC CLUB",
-        "extScore": null
+        "extScore": 3
       },
       {
         "home": "STADE RENNAIS FC",
-        "homeScore": null,
+        "homeScore": 4,
         "ext": "STADE BRESTOIS 29",
-        "extScore": null
+        "extScore": 5
       },
       {
         "home": "RC STRASBOURG ALSACE",
-        "homeScore": null,
+        "homeScore": 1,
         "ext": "OGC NICE",
-        "extScore": null
+        "extScore": 3
       }
     ],
     [
